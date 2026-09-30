@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ICHEP 2028 · Bangkok, Thailand</title>
+<meta name="description" content="ICHEP 2028 — International Conference on High Energy Physics, 20–26 July 2028, Chulalongkorn University, Bangkok, Thailand.">
+<meta property="og:title" content="ICHEP 2028 · Bangkok, Thailand">
+<meta property="og:description" content="20–26 July 2028 · Chulalongkorn University, Bangkok">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b1633; --navy2:#13244f; --gold:#d8a93b; --pink:#e0679a;
+    --ink:#1b2236; --muted:#5b6478; --bg:#f7f8fb; --card:#ffffff; --line:#e3e6ee;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* Nav */
+  nav{position:sticky;top:0;z-index:10;background:rgba(11,22,51,.92);backdrop-filter:blur(8px)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{color:#fff;font-weight:800;letter-spacing:.5px;text-decoration:none}
+  .brand span{color:var(--gold)}
+  nav ul{display:flex;gap:22px;list-style:none}
+  nav ul a{color:#c9d2ea;text-decoration:none;font-size:.92rem;font-weight:500}
+  nav ul a:hover{color:#fff}
+
+  /* Hero */
+  header{position:relative;overflow:hidden;color:#fff;
+    background:radial-gradient(1200px 500px at 80% -10%,#2a3f86 0%,transparent 60%),
+               linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);
+    padding:96px 0 88px}
+  header svg.tracks{position:absolute;right:-120px;top:-60px;width:620px;opacity:.35;pointer-events:none}
+  .eyebrow{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+    color:var(--gold);border:1px solid rgba(216,169,59,.5);border-radius:99px;padding:4px 14px;margin-bottom:22px}
+  h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;line-height:1.05;letter-spacing:-1px}
+  h1 span{color:var(--gold)}
+  .sub{font-size:clamp(1.05rem,2.4vw,1.3rem);color:#c9d2ea;margin-top:12px;max-width:640px}
+  .facts{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .fact{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 20px}
+  .fact small{display:block;color:#9fb0d8;font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px}
+  .fact strong{font-size:1.1rem}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:600;text-decoration:none;font-size:.95rem}
+  .btn.primary{background:var(--gold);color:var(--navy)}
+  .btn.ghost{border:1px solid rgba(255,255,255,.35);color:#fff}
+  .btn:hover{filter:brightness(1.08)}
+
+  /* Countdown */
+  .countdown{display:flex;gap:12px;margin-top:40px}
+  .countdown div{text-align:center;min-width:72px}
+  .countdown b{display:block;font-size:2rem;font-weight:800;font-variant-numeric:tabular-nums}
+  .countdown span{font-size:.72rem;color:#9fb0d8;text-transform:uppercase;letter-spacing:1.5px}
+
+  /* Sections */
+  section{padding:72px 0}
+  h2{font-size:1.9rem;font-weight:800;margin-bottom:10px;letter-spacing:-.5px}
+  .lead{color:var(--muted);max-width:720px;margin-bottom:34px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .card h3{font-size:1.05rem;margin-bottom:6px}
+  .card p{color:var(--muted);font-size:.95rem}
+
+  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  th,td{text-align:left;padding:14px 20px;border-bottom:1px solid var(--line);font-size:.95rem}
+  th{background:#eef1f8;font-size:.78rem;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted)}
+  tr:last-child td{border-bottom:none}
+  tr.highlight td{background:#fdf6e6;font-weight:600}
+  .tba{color:var(--muted);font-style:italic}
+
+  .venue{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:stretch}
+  .map{border-radius:16px;overflow:hidden;border:1px solid var(--line);min-height:320px}
+  .map iframe{width:100%;height:100%;min-height:320px;border:0}
+  @media (max-width:760px){ .venue{grid-template-columns:1fr} nav ul{display:none} header{padding:72px 0 64px} }
+
+  .notify{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:20px;padding:40px;text-align:center}
+  .notify p{color:#c9d2ea;margin:8px auto 22px;max-width:560px}
+
+  footer{background:var(--navy);color:#9fb0d8;padding:36px 0;font-size:.88rem}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">ICHEP <span>2028</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#dates">Key dates</a></li>
+      <li><a href="#venue">Venue</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <!-- Decorative particle-track motif -->
+  <svg class="tracks" viewBox="0 0 600 600" fill="none" stroke-linecap="round">
+    <circle cx="300" cy="300" r="4" fill="#d8a93b"/>
+    <path d="M300 300 C 360 220, 460 180, 590 170" stroke="#d8a93b" stroke-width="2"/>
+    <path d="M300 300 C 240 200, 200 120, 180 10" stroke="#e0679a" stroke-width="2"/>
+    <path d="M300 300 C 400 330, 480 420, 520 580" stroke="#7fa2ff" stroke-width="2"/>
+    <path d="M300 300 C 200 340, 110 360, 10 420" stroke="#ffffff" stroke-width="1.5"/>
+    <path d="M300 300 C 320 400, 300 480, 250 590" stroke="#d8a93b" stroke-width="1.2" stroke-dasharray="4 6"/>
+    <circle cx="300" cy="300" r="120" stroke="#ffffff" stroke-opacity=".15"/>
+    <circle cx="300" cy="300" r="220" stroke="#ffffff" stroke-opacity=".1"/>
+  </svg>
+
+  <div class="wrap" style="position:relative">
+    <div class="eyebrow">Save the date</div>
+    <h1>ICHEP <span>2028</span></h1>
+    <p class="sub">44th International Conference on High Energy Physics</p>
+
+    <div class="facts">
+      <div class="fact"><small>Dates</small><strong>20 – 26 July 2028</strong></div>
+      <div class="fact"><small>Venue</small><strong>Chulalongkorn University</strong></div>
+      <div class="fact"><small>City</small><strong>Bangkok, Thailand</strong></div>
+    </div>
+
+    <div class="cta">
+      <a class="btn primary" target="_blank" rel="noopener"
+         href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=ICHEP%202028&dates=20280720/20280727&location=Chulalongkorn%20University%2C%20Bangkok%2C%20Thailand&details=44th%20International%20Conference%20on%20High%20Energy%20Physics%20%E2%80%94%20https%3A%2F%2Fichep2028.org">
+        + Add to calendar</a>
+      <a class="btn ghost" href="#dates">Key dates</a>
+    </div>
+
+    <div class="countdown" id="countdown" aria-label="Countdown to ICHEP 2028">
+      <div><b id="cd-d">–</b><span>Days</span></div>
+      <div><b id="cd-h">–</b><span>Hours</span></div>
+      <div><b id="cd-m">–</b><span>Minutes</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About the conference</h2>
+    <p class="lead">ICHEP is the major biennial conference of the international particle physics community.
+      In July 2028 it comes to Bangkok, hosted by Chulalongkorn University. Researchers from around the world
+      will present the latest results in particle physics, astroparticle physics, cosmology, and accelerator
+      and detector technology.</p>
+    <div class="grid">
+      <div class="card"><h3>Plenary sessions</h3><p>Reviews of the field's major results and open questions.</p></div>
+      <div class="card"><h3>Parallel sessions</h3><p>Talks on specific topics, from the Higgs and neutrinos to dark matter and new detector technologies.</p></div>
+      <div class="card"><h3>Posters &amp; outreach</h3><p>Poster sessions for early-career researchers, plus public events in Bangkok.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="dates" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <h2>Key dates</h2>
+    <p class="lead">More deadlines will be announced soon. Please check back.</p>
+    <table>
+      <thead><tr><th>Milestone</th><th>Date</th></tr></thead>
+      <tbody>
+        <tr><td>Registration opens</td><td class="tba">To be announced</td></tr>
+        <tr><td>Abstract submission opens</td><td class="tba">To be announced</td></tr>
+        <tr><td>Abstract submission deadline</td><td class="tba">To be announced</td></tr>
+        <tr><td>Early-bird registration deadline</td><td class="tba">To be announced</td></tr>
+        <tr class="highlight"><td>Conference</td><td>20 – 26 July 2028</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="venue">
+  <div class="wrap venue">
+    <div>
+      <h2>Venue</h2>
+      <p class="lead" style="margin-bottom:18px">Chulalongkorn University, founded in 1917, is Thailand's oldest university.
+        Its campus is in Pathum Wan, in central Bangkok, and is easy to reach by BTS Skytrain and MRT.</p>
+      <div class="card">
+        <h3>Chulalongkorn University</h3>
+        <p>254 Phaya Thai Road, Wang Mai, Pathum Wan,<br>Bangkok 10330, Thailand</p>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <h3>Getting there</h3>
+        <p>Bangkok's international airports are Suvarnabhumi (BKK) and Don Mueang (DMK). Details on travel, visas and accommodation will be added soon.</p>
+      </div>
+    </div>
+    <div class="map">
+      <iframe loading="lazy" title="Map of Chulalongkorn University"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=100.5195%2C13.7300%2C100.5400%2C13.7470&amp;layer=mapnik&amp;marker=13.7384%2C100.5320"></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="notify">
+      <h2>Stay informed</h2>
+      <p>Calls for abstracts, registration and practical information will be posted here.</p>
+      <!-- TODO: replace with the official contact address once it exists, e.g. mailto:info@ichep2028.org -->
+      <span class="btn primary" style="cursor:default">Contact details coming soon</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2028 ICHEP 2028 Local Organizing Committee · Chulalongkorn University</div>
+    <div>Bangkok, Thailand · 20–26 July 2028</div>
+  </div>
+</footer>
+
+<script>
+  // Countdown to 20 July 2028, 09:00 Bangkok time (UTC+7)
+  (function(){
+    var target = new Date('2028-07-20T09:00:00+07:00').getTime();
+    function tick(){
+      var diff = Math.max(0, target - Date.now());
+      var d = Math.floor(diff/864e5), h = Math.floor(diff%864e5/36e5), m = Math.floor(diff%36e5/6e4);
+      document.getElementById('cd-d').textContent = d;
+      document.getElementById('cd-h').textContent = h;
+      document.getElementById('cd-m').textContent = m;
+    }
+    tick(); setInterval(tick, 30000);
+  })();
+</script>
+</body>
+</html>
