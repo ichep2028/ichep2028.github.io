@@ -11,9 +11,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+  /* ICHEP 2028 palette — "Particles & Connections" (HEX, not a Pantone spec)
+     Sky Blue #429BCB (primary) · Deep Navy #18354D (support)
+     Warm Copper #C9814B (accent) · Dusty Rose #D59AAE (detail) */
   :root{
-    --navy:#0b1633; --navy2:#13244f; --gold:#d8a93b; --pink:#e0679a;
-    --ink:#1b2236; --muted:#5b6478; --bg:#f7f8fb; --card:#ffffff; --line:#e3e6ee;
+    --sky:#429BCB; --navy:#18354D; --navy-deep:#0F2536; --copper:#C9814B; --rose:#D59AAE;
+    --ink:#18354D; --muted:#526675; --bg:#F8F5F0; --card:#ffffff; --line:#E6E1D8;
+    --on-dark:#C9D6E0; --on-dark-muted:#9DB3C4;
+    --sky-tint:#EAF3F9; --copper-tint:#F7ECE2;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -22,32 +27,32 @@
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 
   /* Nav */
-  nav{position:sticky;top:0;z-index:10;background:rgba(11,22,51,.92);backdrop-filter:blur(8px)}
+  nav{position:sticky;top:0;z-index:10;background:rgba(15,37,54,.94);backdrop-filter:blur(8px)}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
   .brand{color:#fff;font-weight:800;letter-spacing:.5px;text-decoration:none}
-  .brand span{color:var(--gold)}
+  .brand span{color:var(--sky)}
   nav ul{display:flex;gap:22px;list-style:none}
-  nav ul a{color:#c9d2ea;text-decoration:none;font-size:.92rem;font-weight:500}
+  nav ul a{color:var(--on-dark);text-decoration:none;font-size:.92rem;font-weight:500}
   nav ul a:hover{color:#fff}
 
   /* Hero */
   header{position:relative;overflow:hidden;color:#fff;
-    background:radial-gradient(1200px 500px at 80% -10%,#2a3f86 0%,transparent 60%),
-               linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);
+    background:radial-gradient(1200px 500px at 80% -10%,rgba(66,155,203,.35) 0%,transparent 60%),
+               linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 100%);
     padding:96px 0 88px}
   header svg.tracks{position:absolute;right:-120px;top:-60px;width:620px;opacity:.35;pointer-events:none}
   .eyebrow{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;
-    color:var(--gold);border:1px solid rgba(216,169,59,.5);border-radius:99px;padding:4px 14px;margin-bottom:22px}
+    color:var(--copper);border:1px solid rgba(201,129,75,.6);border-radius:99px;padding:4px 14px;margin-bottom:22px}
   h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;line-height:1.05;letter-spacing:-1px}
-  h1 span{color:var(--gold)}
-  .sub{font-size:clamp(1.05rem,2.4vw,1.3rem);color:#c9d2ea;margin-top:12px;max-width:640px}
+  h1 span{color:var(--sky)}
+  .sub{font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--on-dark);margin-top:12px;max-width:640px}
   .facts{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
   .fact{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 20px}
-  .fact small{display:block;color:#9fb0d8;font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px}
+  .fact small{display:block;color:var(--on-dark-muted);font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px}
   .fact strong{font-size:1.1rem}
   .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
   .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:600;text-decoration:none;font-size:.95rem}
-  .btn.primary{background:var(--gold);color:var(--navy)}
+  .btn.primary{background:var(--copper);color:var(--navy-deep)}
   .btn.ghost{border:1px solid rgba(255,255,255,.35);color:#fff}
   .btn:hover{filter:brightness(1.08)}
 
@@ -55,7 +60,7 @@
   .countdown{display:flex;gap:12px;margin-top:40px}
   .countdown div{text-align:center;min-width:72px}
   .countdown b{display:block;font-size:2rem;font-weight:800;font-variant-numeric:tabular-nums}
-  .countdown span{font-size:.72rem;color:#9fb0d8;text-transform:uppercase;letter-spacing:1.5px}
+  .countdown span{font-size:.72rem;color:var(--on-dark-muted);text-transform:uppercase;letter-spacing:1.5px}
 
   /* Sections */
   section{padding:72px 0}
@@ -68,9 +73,9 @@
 
   table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
   th,td{text-align:left;padding:14px 20px;border-bottom:1px solid var(--line);font-size:.95rem}
-  th{background:#eef1f8;font-size:.78rem;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted)}
+  th{background:var(--sky-tint);font-size:.78rem;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted)}
   tr:last-child td{border-bottom:none}
-  tr.highlight td{background:#fdf6e6;font-weight:600}
+  tr.highlight td{background:var(--copper-tint);font-weight:600}
   .tba{color:var(--muted);font-style:italic}
 
   .venue{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:stretch}
@@ -78,10 +83,10 @@
   .map iframe{width:100%;height:100%;min-height:320px;border:0}
   @media (max-width:760px){ .venue{grid-template-columns:1fr} nav ul{display:none} header{padding:72px 0 64px} }
 
-  .notify{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:20px;padding:40px;text-align:center}
-  .notify p{color:#c9d2ea;margin:8px auto 22px;max-width:560px}
+  .notify{background:linear-gradient(135deg,var(--navy-deep),var(--navy));color:#fff;border-radius:20px;padding:40px;text-align:center}
+  .notify p{color:var(--on-dark);margin:8px auto 22px;max-width:560px}
 
-  footer{background:var(--navy);color:#9fb0d8;padding:36px 0;font-size:.88rem}
+  footer{background:var(--navy-deep);color:var(--on-dark-muted);padding:36px 0;font-size:.88rem}
   footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 </style>
 </head>
@@ -102,12 +107,12 @@
 <header>
   <!-- Decorative particle-track motif -->
   <svg class="tracks" viewBox="0 0 600 600" fill="none" stroke-linecap="round">
-    <circle cx="300" cy="300" r="4" fill="#d8a93b"/>
-    <path d="M300 300 C 360 220, 460 180, 590 170" stroke="#d8a93b" stroke-width="2"/>
-    <path d="M300 300 C 240 200, 200 120, 180 10" stroke="#e0679a" stroke-width="2"/>
-    <path d="M300 300 C 400 330, 480 420, 520 580" stroke="#7fa2ff" stroke-width="2"/>
+    <circle cx="300" cy="300" r="4" fill="#C9814B"/>
+    <path d="M300 300 C 360 220, 460 180, 590 170" stroke="#C9814B" stroke-width="2"/>
+    <path d="M300 300 C 240 200, 200 120, 180 10" stroke="#D59AAE" stroke-width="2"/>
+    <path d="M300 300 C 400 330, 480 420, 520 580" stroke="#429BCB" stroke-width="2"/>
     <path d="M300 300 C 200 340, 110 360, 10 420" stroke="#ffffff" stroke-width="1.5"/>
-    <path d="M300 300 C 320 400, 300 480, 250 590" stroke="#d8a93b" stroke-width="1.2" stroke-dasharray="4 6"/>
+    <path d="M300 300 C 320 400, 300 480, 250 590" stroke="#C9814B" stroke-width="1.2" stroke-dasharray="4 6"/>
     <circle cx="300" cy="300" r="120" stroke="#ffffff" stroke-opacity=".15"/>
     <circle cx="300" cy="300" r="220" stroke="#ffffff" stroke-opacity=".1"/>
   </svg>
@@ -148,7 +153,8 @@
     <div class="grid">
       <div class="card"><h3>Plenary sessions</h3><p>Reviews of the field's major results and open questions.</p></div>
       <div class="card"><h3>Parallel sessions</h3><p>Talks on specific topics, from the Higgs and neutrinos to dark matter and new detector technologies.</p></div>
-      <div class="card"><h3>Posters &amp; outreach</h3><p>Poster sessions for early-career researchers, plus public events in Bangkok.</p></div>
+      <div class="card"><h3>Poster sessions</h3><p>A space for early-career researchers to present their work and discuss it with the community.</p></div>
+      <div class="card"><h3>Outreach</h3><p>Public events in Bangkok that share the excitement of particle physics with students and the wider public.</p></div>
     </div>
   </div>
 </section>
